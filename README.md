@@ -186,6 +186,8 @@ bin/dev
 
 JS・CSSの変更がブラウザにリアルタイム反映されるため、3つ同時起動が必要な構成です。
 
+詳しい理由は [docs/why-bin-dev.md](docs/why-bin-dev.md) を参照してください。
+
 ポートが競合する場合（他のRailsアプリを同時に起動しているときなど）：
 ```bash
 bin/dev -p 3001
