@@ -208,3 +208,5 @@ bundle exec rspec
 本番環境はRenderを使用しています。
 データベースはRenderのPostgreSQLサービスを使用します。
 `DATABASE_URL` 環境変数で本番DBに接続します。
+
+詳しい手順は [docs/deploy-to-render.md](docs/deploy-to-render.md) を参照してください。
