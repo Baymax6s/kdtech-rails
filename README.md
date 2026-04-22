@@ -210,3 +210,34 @@ bundle exec rspec
 `DATABASE_URL` 環境変数で本番DBに接続します。
 
 詳しい手順は [docs/deploy-to-render.md](docs/deploy-to-render.md) を参照してください。
+
+```
+wsl.exe --install Ubuntu-24.04
+# 再起動
+
+sudo apt update -y && sudo apt install -y curl
+sudo install -dm 755 /etc/apt/keyrings
+curl -fSs https://mise.jdx.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.asc 1> /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
+sudo apt update -y
+sudo apt install -y mise
+
+echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+
+sudo apt update
+sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev
+
+
+リポジトリのクローン
+そこに移動
+vscodeならwslでターミナルを起動する
+
+Name: WSL
+Id: ms-vscode-remote.remote-wsl
+Description: Open any folder in the Windows Subsystem for Linux (WSL) and take advantage of Visual Studio Code's full feature set.
+Version: 0.104.3
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+
+というvscode extensionを入れる
+```
